@@ -1,0 +1,7 @@
+
+{
+  "navigationBarTitleText": "生成海报",
+  "usingComponents": {
+    "navbar": "/components/navbarIndex/index"
+  }
+}

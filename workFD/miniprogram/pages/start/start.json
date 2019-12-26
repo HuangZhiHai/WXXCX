@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": " ",
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "wxc-button": "/components/wxc-button/dist/index",
+    "wxc-icon": "/components/wxc-icon/dist/index",
+    "login": "/components/login/login"
+  }
+}

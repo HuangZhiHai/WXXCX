@@ -1,0 +1,68 @@
+<view>
+<navbar page-name="Com on" styl="padding-top:0px"></navbar>
+</view>
+<view class="container">
+  <view class="header" style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.5))'>
+    <view class='shop-Info'>
+      <open-data class='logo' type="userAvatarUrl"></open-data>
+      <view class='shop-words'>
+        <view class="welcome-ellipsis">欢迎光临！留下你的足迹吧</view>
+        <view class="delivery-ellipsis">
+          <wxc-elip line='2'> {{shopDelivery}} </wxc-elip>
+        </view>
+      </view>
+      <view class='clock'>
+        <canvas canvas-id="myCanvas" class="canvas"></canvas>
+      </view>
+    </view>
+    <!-- <view class="line"></view> -->
+  </view>
+ </view>
+ <scroll-view  class="scroll-restaurants-list bakColor" scroll-y="true" style="height:{{height}}px;width:auto;">
+  <view class="max-width">
+    <image class="userinfo-avatar" src="{{photoFilePath}}" mode="widthFix" />
+    <image src='../images/empty3.png' class='ruleHide' bindtap='toLoveUrl'></image>
+  </view>
+  <view class="profile-box">
+    <view class="profile">
+      <view class="name">{{ nickName }}</view>
+      <view class="position">{{ title}}</view>
+    </view>
+    <view class="profile2">
+      <view class="name">手机</view>
+      <view class="position">{{mobilePhoneNumber}}</view>
+      <view class="action">
+        <button class="action" bindtap="callPhone">拨打</button>
+      </view>
+    </view>
+    <view wx:for="{{categoryList}}"  class="profile2">
+      <view class="name">{{item.k}}</view>
+      <view class="position">{{item.items}}</view>
+      <view class="action">
+        <button class="action" data-v="{{item.items}}" bindtap="copyData">复制</button>
+      </view>
+    </view>
+  </view> 
+  <view class="action-buttons">
+    <view class="button" bindtap="createHaibao">
+      <image class="img" src="../images/posters.png" />
+      <view class="txt">海报</view>
+    </view>
+    <view class="button" bindtap="addPhoneContact">
+      <image class="img" src="../images/txl.png" />
+      <view class="txt">保存到通讯录</view>
+    </view>
+    <view class="button">
+      <button open-type="share" plain="true" style="border:none;">
+        <image class="img" style="margin-left:0;" src="../images/share.png" />
+      </button>
+      <view class="txt">分享</view>
+    </view>
+  </view>
+  <!-- <view>
+    <image wx:if="{{ qrcode }}" class="qrcode" src="{{qrcode}}" />
+  </view>
+  <view wx:if="{{showMpjbutton}}" class="sharempj" bindtap="goIndex">
+    <image class="shareimg" src="../images/mpj.png" />
+  </view> -->
+</scroll-view>

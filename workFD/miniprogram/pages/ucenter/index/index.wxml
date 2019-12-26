@@ -1,0 +1,70 @@
+<view>
+<navbar page-name="我的" styl="padding-top:0px"></navbar>
+</view>
+<view class="container" bindtap="hideCalendar">
+  <view class='userbox' style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.3))'>
+    <view wx:if="{{userInfo}}" class="userinfo">
+      <wxc-avatar class="userinfo-avatar" src="{{ userInfo.avatarUrl }}"> </wxc-avatar>
+      <view style='width:30rpx;'></view>
+      <view class='userinfo-text'>
+        <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+        <view style='height:10rpx;'></view>
+        <!-- 部分未通过认证的开发者无权限获得用户绑定电话信息，故暂时隐藏此功能。具体可见微信官方https://developers.weixin.qq.com/miniprogram/dev/api/getPhoneNumber.html --> 
+       <!-- <wxc-label wx:if="{{userMobile}}" class="phoneNumber" type='fill' type-color="#747ba1">
+            {{userMobile}}
+          </wxc-label>
+          <button wx:else class="pin-phoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" size='min'>
+            点击绑定手机号码
+          </button> -->
+      </view>
+
+    </view>
+    <view wx:else class="userinfo">
+      <wxc-avatar class="userinfo-avatar-no" mold="square" src="../../images/del.png" bindtap="relogin"> </wxc-avatar>
+      <view class='userinfo-text'>
+        <text class="userinfo-nickname"> 欢迎您 ，👆 点我登陆 </text>
+        <view style='height:10rpx;'></view>
+      </view>
+    </view>
+    <view class='userInfoMask'></view>
+    <wxc-button class='my-sign1' wx:if="{{score_sign_t == 0}}" size="small" type="beauty" value="每日签到" bindclick="scoresign"></wxc-button>
+    <wxc-button class='my-sign' wx:if="{{score_sign_continuous > 0}}" size="small" type="secondary" value="已签到 {{score_sign_continuous}} 天" catchtap="showCalendar" ></wxc-button>
+  </view>
+
+  <view class="user-menu">
+    <!-- <view class="item no-border-right">
+      <navigator url="/pages/ucenter/location/location" hover-class="none" class="a">
+        <wxc-icon type='location' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <text class="txt">到这里</text>
+      </navigator>
+    </view> -->
+    <view class="item item-bottom" bindtap="aboutUs">
+      <navigator url="/pages/ucenter/index/index" hover-class="none" class="a">
+        <wxc-icon type='help' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <text class="txt">开发者资料</text>
+      </navigator>
+    </view>
+    <view class="item no-border-bottom">
+      <navigator url="/pages/ucenter/feedback/feedback" hover-class="none" class="a">
+        <wxc-icon type='comment' size='{{iconSize}}' color='{{iconColor}}' style='margin:15rpx 0 10rpx 0;'></wxc-icon>
+        <text class="txt">意见反馈</text>
+      </navigator>
+    </view>
+    <view class="item no-border-bottom">
+     
+    </view>
+  </view>
+  <view style="height:20rpx;width:100%;"></view>
+  <view class="my-item" style='border:none;padding:0rpx;margin:0rpx;background:none;border:none;width:100%;height:auto;line-height:auto;'>
+    <wxc-button type="danger" value="重新授权登录" bindclick="relogin"></wxc-button>
+  </view>
+  <view class="version" style='margin-top:10rpx;font-size:18rpx;'>© 2019-2020 HuangZhiHai(GitHub ID)</view>
+  <view style="height:12rpx;width:100%;"></view>
+    <!--日历展示-->
+  <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}"  >
+   <view class='Content' catchtap="showCalendar" >
+        <include src="../calendar/calendar.wxml"/>
+        <!-- <image src='../../images/del.png' class='ruleHide' bindtap='hideRule'></image> -->
+    </view>
+  </view>
+</view>

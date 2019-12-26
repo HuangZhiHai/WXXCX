@@ -1,0 +1,73 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/start/start",
+    "pages/classification/index",
+    "pages/news/main",
+    "pages/products/main",
+    "pages/home/home",
+    "components/navbar/index",
+    "components/mycenter/mycenter",
+    "components/login/login",
+    "pages/ucenter/index/index",
+    "pages/ucenter/feedback/feedback",
+    "pages/ucenter/location/location",
+    "pages/cardposter/main",
+    "components/icon/page1",
+    "components/mys/index",
+    "components/navbarIndex",
+    "components/navbarIndex/index",
+    "pages/ucenter/calendar/calendar"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序展示"
+    }
+  },
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "獾哥欢迎你，加载中请稍后",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#00afb4"
+  },
+  "tabBar": {
+    "color": "#272636",
+    "selectedColor": "#F32640",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/classification/index",
+        "iconPath": "pages/images/find-off.png",
+        "selectedIconPath": "pages/images/find-on.png",
+        "color": "white",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "pages/images/mp.png",
+        "selectedIconPath": "pages/images/mpa.png",
+        "text": "数据"
+      },
+      {
+        "pagePath": "pages/products/main",
+        "iconPath": "pages/images/pro.png",
+        "selectedIconPath": "pages/images/proa.png",
+        "text": "产品"
+      },
+      {
+        "pagePath": "pages/news/main",
+        "iconPath": "pages/images/dt.png",
+        "selectedIconPath": "pages/images/dta.png",
+        "text": "动态"
+      },
+      {
+        "pagePath": "pages/ucenter/index/index",
+        "iconPath": "pages/images/my-off.png",
+        "selectedIconPath": "pages/images/my-on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

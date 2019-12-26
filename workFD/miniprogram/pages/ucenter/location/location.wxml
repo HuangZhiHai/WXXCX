@@ -1,0 +1,37 @@
+<view>
+<navbar page-name="My位置" styl="padding-top:0px"></navbar>
+</view>
+<view class='shopInfo'>
+  <view class='shopname'>
+    地址：长春市宽城区
+  </view>
+  <view class='shopconnect'>
+    手机号：******(黄先生)
+  </view>
+  <view style='margin-left: 20rpx; width: 90%; height: 50rpx; font-size: 28rpx; align-items: center;'>
+    (可通过主页电话联系我)
+  </view>
+</view>
+<view class="mainView">
+   <map
+        class="mapView"
+        style="width: 100%; height: 375px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        scale='18'
+        >
+    </map>
+</view>
+
+<view class="head" style="flex-direction:row;">
+    <view class='distanceTxt'>
+      <image class="icon" src="" mode="aspectFill" style='width:50rpx;height:30rpx;margin-right:20rpx;margin-top:8rpx;'></image>
+      <text>距离我约：{{meters}}km</text>
+    </view>
+    <button bindtap="openTgLocation" style='width:200rpx;margin-top:30rpx;'>导航</button>
+</view>
+
+
+

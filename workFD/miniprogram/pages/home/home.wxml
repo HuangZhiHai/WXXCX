@@ -1,0 +1,89 @@
+<!-- <import src = "../common/sort_list.wxml"/> -->
+<view class="container">
+<navbar page-name="数据展示" style="padding-top:0px"></navbar>
+</view>
+<scroll-view bindscrolltolower="lower" class="scroll-restaurants-list"  scroll-y="true" style="height:15%">
+  <swiper class="categoryList"  indicator-dots="true" 
+  indicator-color="rgba(228,228,228,1)" 
+  indicator-active-color="#FECA49" bindchange="swiperTab">
+    <block wx:for="{{categoryList}}" wx:key="">
+    <swiper-item>
+    <block wx:for="{{item}}" wx:key="">
+      <view class="category-info" bindtap="onClickPicAndText" id = "{{item.id}}">
+        <view class = "category-info-inline1">
+           <image src="{{item.src}}" class="category-image"></image>
+        </view>
+        <view class="category-info-inline2 category-text">{{item.name}}({{totals}})</view>
+      </view>
+    </block>
+    </swiper-item>
+    </block>
+  </swiper>
+</scroll-view>
+<!-- <view class="trh bg-w" >
+  <scroll-view   scroll-x style="width:auto;overflow:hidden;">
+    <block wx:for="{{listData}}" wx:key="{{id}}">
+      <view class="th"><view class="th1">{{item.code}}</view></view>
+    </block>
+  </scroll-view>
+</view> -->
+<scroll-view   scroll-x = "true" style="width:auto;">
+  <view class="table" style="width:{{widthRem}}rem;overflow:scroll;;" >
+     <view class="trh bg-w" >
+        <block wx:for="{{listHeadData}}" wx:key="{{id}}">
+          <view class="th" ><view class="th1">{{item}}</view></view>
+        </block>
+    </view>
+   <scroll-view bindscrolltolower="lower" class="scroll-restaurants-list" scroll-y="true" style="height:{{height}}px;width:auto">
+    <block wx:for="{{listData}}" wx:key="{{id}}">
+      <view class="tr bg-g  " bindtap='showRule' data-sizeData="{{item}}"  wx:if="{{index % 2 == 0}}">
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll" ><view class="td" >{{item.orderNumber}}</view></scroll-view></view>
+        <!-- <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.mmd.materiel}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.mmd.specifications}}</view></scroll-view></view> -->
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.orderBatch}}</view></scroll-view></view>
+        <!-- <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.mmd.materielName}}</view></scroll-view></view> -->
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preStatus}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterStatus}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.deliverDate}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preDistributionDate}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.productionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preDistributionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preResidueDistributionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterDistributionDate}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterDistributionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterResidueDistributionQuantity}}</view></scroll-view></view>
+      </view>
+      <view class="tr " bindtap='showRule' data-sizeData="{{item}}" wx:else>
+         <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll" ><view class="td">{{item.orderNumber}}</view></scroll-view></view>
+        <!-- <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.mmd.materiel}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.mmd.specifications}}</view></scroll-view></view> -->
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.orderBatch}}</view></scroll-view></view>
+        <!-- <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.mmd.materielName}}</view></scroll-view></view> -->
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preStatus}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterStatus}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.deliverDate}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preDistributionDate}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.productionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preDistributionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.preResidueDistributionQuantity}}</view></scroll-view></view>
+        <view class="td1"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterDistributionDate}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterDistributionQuantity}}</view></scroll-view></view>
+        <view class="td1 tdBorder"><scroll-view   scroll-x = "true" class="tdScoll"><view class="td">{{item.afterResidueDistributionQuantity}}</view></scroll-view></view>
+      </view>
+    </block>
+    </scroll-view>
+  </view>
+</scroll-view>
+
+ <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}" >
+   <view class='Content' >
+        <view class='ruleZhezhaoContent' style="overflow:scroll;" >
+            <view class='ruleZhezhaoText' wx:for='{{rule}}' wx:for-index='index'>
+                <text>{{index+1}}</text>
+                <text >{{item}}</text>
+            </view>
+        </view>
+        <image src='../images/del.png' class='ruleHide' bindtap='hideRule'></image>
+    </view>
+  </view>
+

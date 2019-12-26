@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "wxc-elip": "/components/wxc-elip/dist/index",
+    "wxc-notice": "/components/wxc-notice/dist/index"
+    
+  }
+}

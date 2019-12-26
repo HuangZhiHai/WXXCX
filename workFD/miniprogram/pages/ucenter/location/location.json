@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "My位置",
+    "usingComponents": {
+      "navbar": "/components/mys/index"
+    }
+}

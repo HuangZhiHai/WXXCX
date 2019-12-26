@@ -1,0 +1,16 @@
+<view>
+<navbar page-name="产品展示" styl="padding-top:0px"></navbar>
+</view>
+<view class="container" style="background-color: #fff;height:{{height}}px">
+  <view wx:if="{{!newsList}}" class="noData">
+    <image class="logo" src="../images/nodata-message.png" mode="widthFix" />
+    <view>暂无数据 ~ </view>
+  </view>
+  <view wx:for="{{newsList}}" wx:for-index='id' class="newsList" bindtap="goDetail" data-id="{{item.id}}">
+    <view wx:if="{{item.pic}}" class="cover">
+      <image class="cover-img" src="{{item.pic}}" mode="widthFix" />
+    </view>
+    <view class="title">{{item.title}}</view>
+    <view class="descript">{{item.descript}}</view>
+  </view>
+</view>

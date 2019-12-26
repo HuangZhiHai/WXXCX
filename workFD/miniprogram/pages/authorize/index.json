@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "用户信息授权",
+  "usingComponents": {
+    "navbar": "/components/login/login",
+    "wxc-button": "/components/wxc-button/dist/index"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "navbar": "/components/login/login",
+    "wxc-avatar": "/components/wxc-avatar/dist/index",
+    "wxc-button": "/components/wxc-button/dist/index",
+    "wxc-icon": "/components/wxc-icon/dist/index",
+    "wxc-label": "/components/wxc-label/dist/index"
+  }
+}

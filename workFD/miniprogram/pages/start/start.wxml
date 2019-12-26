@@ -1,0 +1,27 @@
+<!--start.wxml-->
+<view >
+<login page-name="Let's go" style="padding-top:0px"></login>
+</view>
+<view class="container" style='background: -webkit-linear-gradient(top, rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 1), rgba({{bgRed}},{{bgGreen}},{{bgBlue}}, 0.1));'>
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="../images/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <image class="title" src="../images/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <open-data class='logo' type="userAvatarUrl"></open-data>
+        <image class="wave" src="../images/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="../images/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+        <image class="smalltitle" src="../images/backGround.png"></image>
+        <wxc-button class="confirm-btn" size='large' btnStyle="width: 282rpx;background: {{background_color}};border-radius: 66rpx;color: #fff;" bindclick='goToIndex'>
+          GO
+          <wxc-icon style='margin-left:20rpx;' color="#fff" type="arrow-right"></wxc-icon>
+        </wxc-button>
+        <text class="copyright">© 2019 1060924435@qq.com 倾情巨献</text>
+      </view>
+    </view>
+  </block>
+</view>

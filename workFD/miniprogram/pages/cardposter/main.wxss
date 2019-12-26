@@ -1,0 +1,58 @@
+.canvas {
+  width:750rpx;
+  height:100px;
+}
+.container {
+   overflow: auto;
+}
+.button {
+  width: 700rpx;
+  /* margin-top: 30rpx; */
+  margin-bottom: 30rpx;
+}
+.bakColor{
+   background-color: #cacac4;
+}
+.profile-box {
+  position: relative;
+  width:650rpx;
+  background-color: #d4d4c7;
+  bottom:10rpx;
+  left:40rpx;
+}
+.profile {
+  text-align: left;
+  padding: 20rpx;
+  color:#555555;
+  display: flex;
+  flex-direction: row;
+  align-items:flex-end;
+}
+.profile .name {
+  font-size: 20px;
+}
+.profile .position {
+  font-size: 12px;
+  margin-left: 30rpx;
+}
+.profile2 {
+  text-align: left;
+  padding: 20rpx;
+  color:#555555;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+.profile2 .name {
+  font-size: 16px;
+  width:120rpx;
+}
+.profile2 .position {
+  font-size: 14px;
+  width:400rpx;
+}
+.profile2 .action {
+  font-size: 12px;
+  width:120rpx;
+}
